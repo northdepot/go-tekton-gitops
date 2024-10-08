@@ -148,9 +148,9 @@ spec:
       name: upload-sbom-to-trustification
     when:
     - input: $(tasks.get-images-to-upload-sbom.results.IMAGES_TO_VERIFY)
-      operator: notin
+      operator: in
       values:
-      - ""
+      - "skip-me"
     workspaces:
     - name: sboms
       workspace: workspace
